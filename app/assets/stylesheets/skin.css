@@ -1,0 +1,41 @@
+/* Styles that are different from the default layout */
+.topbanner-content {
+  white-space: nowrap;
+}
+
+.topbanner-content a, #search-form label {
+  text-shadow: 1px 1px 1px #DCD6C6;
+}
+
+#search-form {
+  position: absolute;
+  top: 20px;
+  left: 660px;
+}
+
+#search-form label {
+  color: #501214;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+#search-form #q {
+  font-size: .8em;
+  color: #4D4E40;
+  width: 150px;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#search-form .submit {
+  width: 32px;
+  padding: 5px 0;
+  margin: 0;
+  display: inline;
+  background-color: #501214;
+  color: #FFF;
+  font-size: .7em;
+  font-weight: bold;
+  border: none;
+}
