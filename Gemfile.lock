@@ -8,8 +8,9 @@ GIT
       nokogiri (~> 1.5)
       omniauth (~> 1.2.0)
 
-PATH
-  remote: ../signup
+GIT
+  remote: git://github.com/txstate-etc/signup.git
+  revision: 74b8e19073e05d7d18c91a3cf3855b67ed9ee079
   specs:
     signup (0.0.1)
       acts-as-taggable-on (~> 3.4.2)

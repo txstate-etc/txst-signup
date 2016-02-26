@@ -61,4 +61,4 @@ group :deploy do
   gem 'passenger', require: false
 end
 
-gem 'signup', path: '../signup'
+gem 'signup', github: 'txstate-etc/signup'
