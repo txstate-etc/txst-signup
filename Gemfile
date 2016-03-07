@@ -62,3 +62,6 @@ group :deploy do
 end
 
 gem 'signup', github: 'txstate-etc/signup'
+
+# generate static pages
+gem 'high_voltage', '~> 2.2.1'

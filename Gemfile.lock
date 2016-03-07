@@ -262,6 +262,7 @@ DEPENDENCIES
   delayed_job
   delayed_job_active_record
   exception_notification
+  high_voltage (~> 2.2.1)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
