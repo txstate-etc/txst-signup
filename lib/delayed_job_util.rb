@@ -1,6 +1,8 @@
 class DelayedJobUtil
   def self.health_check
-    count = Delayed::Job.where('created_at < ? AND failed_at IS NULL', 10.minutes.ago).count
+    count = ActiveRecord::Base.logger.silence do 
+      Delayed::Job.where('created_at < ? AND failed_at IS NULL', 10.minutes.ago).count 
+    end
     if count > 0
       # restart delayed_job and send an email
       Rails.logger.error("There are #{count} outstanding delayed_jobs. restarting daemon.")
