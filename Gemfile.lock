@@ -10,13 +10,12 @@ GIT
 
 GIT
   remote: git://github.com/txstate-etc/signup.git
-  revision: 74b8e19073e05d7d18c91a3cf3855b67ed9ee079
+  revision: 1549a256f8a035bb039916e475018d0bc6118ff3
   specs:
     signup (0.0.1)
       acts-as-taggable-on (~> 3.4.2)
       cocoon (~> 1.2.6)
       counter_culture (~> 0.1.25)
-      high_voltage (~> 2.2.1)
       htmlentities (~> 4.3.2)
       jbuilder
       jquery-rails
@@ -98,7 +97,7 @@ GEM
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.8)
-    concurrent-ruby (1.0.0)
+    concurrent-ruby (1.0.1)
     counter_culture (0.1.34)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -220,7 +219,7 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.3)
+    sprockets-rails (3.0.4)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
