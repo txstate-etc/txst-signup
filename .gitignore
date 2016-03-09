@@ -13,3 +13,4 @@
 /tmp
 config/secrets.yml
 public/[0-9]*.html
+public/system/documents

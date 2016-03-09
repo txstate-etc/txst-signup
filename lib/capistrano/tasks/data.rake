@@ -1,11 +1,11 @@
 namespace :data do
   
   def sql_dump_file
-    fetch(:sql_dump_file, "dump.#{fetch(:application)}.sql")
+    fetch(:sql_dump_file, "dump.signup.sql")
   end
 
   def documents_dump_file
-    fetch(:documents_dump_file, "documents.#{fetch(:application)}.tar.gz")
+    fetch(:documents_dump_file, "documents.signup.tar.gz")
   end
 
   desc "Export data from the target environment and copy it to the local environment"
@@ -58,7 +58,7 @@ namespace :data do
     if File.exist?("tmp/#{sql_dump_file}") && File.exist?("tmp/#{documents_dump_file}")
       puts "importing into local database"
       `rake db:fromdump`
-      `rake db:migrate`
+      # `rake db:migrate`
       
       keep_dump = ENV.key? 'KEEPDUMP'
 
@@ -92,7 +92,7 @@ namespace :data do
           debug "importing into remote database"
           execute :rake, 'db:fromdump'
           execute :rm, "#{current_path}/tmp/#{sql_dump_file}"
-          execute :rake, 'db:migrate'
+          # execute :rake, 'db:migrate'
         end
       end
     end
