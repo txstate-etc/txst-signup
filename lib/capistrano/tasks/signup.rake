@@ -19,7 +19,7 @@ namespace :signup do
     abort "Don't run in production!" if fetch(:rails_env) == :production
 
     on release_roles :all do
-      within current_path do
+      within release_path do
         newrev = `git ls-remote git://github.com/txstate-etc/signup.git master | awk '{ print $1 }'`.strip
 
         lockfile = "Gemfile.lock"
