@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/txstate-etc/signup.git
-  revision: b0930be19d7040ff8ae73e65c14101511dfa9d20
+  revision: bb07a9af54157931fa700000a314dc3c45cdf089
   specs:
     signup (0.0.1)
       acts-as-taggable-on (~> 3.4.2)
