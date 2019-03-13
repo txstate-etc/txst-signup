@@ -1,4 +1,4 @@
-CAS_URL = 'https://login.its.txstate.edu'
+CAS_URL = 'https://authentic.txstate.edu/idp/profile/cas'
 LOGOUT_URL = "#{CAS_URL}/logout"
 
 Rails.application.config.middleware.use OmniAuth::Builder do
