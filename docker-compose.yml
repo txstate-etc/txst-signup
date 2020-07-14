@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    build: .
+    depends_on:
+      - mysql
+    ports:
+      - 80:80
+      - 443:443
+    env_file: .env
+    volumes:
+      - ./app:/usr/app/app
+      - ./db:/usr/app/db
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3303:3306"
+    volumes:
+      - signupdata:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: signup
+    env_file: .env
+  fakecas:
+    image: registry.its.txstate.edu/cas-stub:base
+    ports:
+      - 2000:80
+  fakesmtp:
+    image: maildev/maildev
+    ports:
+      - 1080:80
+volumes:
+  signupdata: {}

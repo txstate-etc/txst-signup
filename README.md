@@ -29,3 +29,9 @@ License
 -------
 
 Signup is released under the Apache License Version 2.0. See the LICENSE.txt file for details.
+
+Development
+-------
+* For dev, using fakesmtp , but do need to uncomment followinng line in config/application.rb  for smtp_settings
+
+    enable_starttls_auto: false,

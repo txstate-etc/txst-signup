@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
+gem 'passenger', '6.0.4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use mysql as the database for Active Record
@@ -57,9 +59,9 @@ group :development do
   gem 'rvm1-capistrano3', require: false
 end
 
-group :deploy do
-  gem 'passenger', require: false
-end
+# group :deploy do
+#   gem 'passenger', require: false
+# end
 
 gem 'signup', github: 'txstate-etc/signup'
 
