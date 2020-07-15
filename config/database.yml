@@ -1,23 +1,21 @@
 defaults: &defaults
   adapter: mysql2
   encoding: utf8
-  reconnect: false
   pool: 5
-  host: localhost
-  username: <%= Rails.application.secrets.db_user %>
-  password: <%= Rails.application.secrets.db_pass %>
+  database: <%= ENV["DB_DATABASE"] %>
+  host: <%= ENV["DB_HOST"] %>
+  port: <%= ENV["DB_PORT"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASS"] %>
 
 development:
   <<: *defaults
-  database: signup_development
 
 staging:
   <<: *defaults
-  database: signup_staging
 
 production:
   <<: *defaults
-  database: signup_production
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

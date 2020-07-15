@@ -20,7 +20,9 @@
 # Learn more: http://github.com/javan/whenever
 
 job_type :bin,  "cd :path && :environment_variable=:environment :bundle_command bin/:task :output"
-
+ENV.each { |k, v| env(k, v) }
+env :PATH, ENV['PATH']
+# env :GEM_PATH, ENV['GEM_PATH']
 set :output, "log/cron_log.log"
 
 # start the delayed_job daemon when the system reboots
