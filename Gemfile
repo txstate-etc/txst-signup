@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
+gem 'hashie', '3.4.3'
+
 gem 'passenger', '6.0.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
