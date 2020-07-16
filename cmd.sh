@@ -12,7 +12,7 @@ killall() {
 
 #rake db:setup
 #rake db:migrate
-bash -l -c 'rake db:setup'
+#bash -l -c 'rake db:setup'
 bash -l -c 'rake db:migrate'
 bash -l -c 'whenever --update-crontab'
 
