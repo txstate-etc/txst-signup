@@ -14,3 +14,4 @@
 public/[0-9]*.html
 public/system/documents
 .env
+.DS_Store
