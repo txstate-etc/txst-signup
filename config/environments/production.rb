@@ -1,5 +1,5 @@
 Rails.application.configure do
-  
+
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => Rails.application.secrets.host_name }
   config.action_mailer.delivery_method = :smtp
@@ -67,7 +67,7 @@ Rails.application.configure do
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups.
-  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.logger = Logger.new(STDOUT)
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
