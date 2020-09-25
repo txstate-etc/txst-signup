@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# bash -l -c 'rails s -e production -b 0.0.0.0 -p 3000'
-# bash -l -c 'rails s  -b 0.0.0.0 -p 3000'
-
 trap killall SIGINT INT SIGHUP HUP SIGTERM TERM SIGQUIT QUIT
 
 killall() {

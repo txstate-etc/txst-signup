@@ -10,7 +10,7 @@ module TxstSignup
   class Application < Rails::Application
     config.action_mailer.smtp_settings = {
       #This is only be used for using fakesmtp server
-      enable_starttls_auto: false,
+      #enable_starttls_auto: false,
       address: Rails.application.secrets.smtp_host,
       domain: Rails.application.secrets.domain_name
     }

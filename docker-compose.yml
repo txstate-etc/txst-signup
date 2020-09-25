@@ -12,11 +12,10 @@ services:
       - ./app:/usr/app/app
       - ./db:/usr/app/db
       - /var/signup:/usr/app/public/system
-#      - signupfiles:/usr/app/public/system/documents/items
   mysql:
     image: mysql:5.7
     ports:
-      - "3303:3306"
+      - '3306:3306'
     volumes:
       - signupdata:/var/lib/mysql
     environment:
@@ -33,4 +32,3 @@ services:
       - 1080:80
 volumes:
   signupdata: {}
-#  signupfiles: {}
