@@ -23,7 +23,7 @@ en:
   site_title: " : Signup Reservation System : Texas State University"
   logo_title: "Texas State Home Page"
   logo_alt: "Texas State University Logo"
-  footer_text_html: "The Signup Reservation System is a tool developed by the Texas State Educational Technology Center.</br> Details regarding account access and system features are available at the <a href='http://www.its.txstate.edu/departments/etc/signup.html'>Signup website</a>."
+  footer_text_html: "The Signup Reservation System is a tool developed by the Texas State Educational Technology Center.</br> Details regarding account access and system features are available at the <a href='https://itac.txstate.edu/support/signup'>Signup website</a>."
   activerecord:
     attributes:
       session:
