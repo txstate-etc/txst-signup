@@ -24,15 +24,94 @@ en:
   logo_title: "Texas State Home Page"
   logo_alt: "Texas State University Logo"
   footer_text_html: "The Signup Reservation System is a tool developed by the Texas State Educational Technology Center.</br> Details regarding account access and system features are available at the <a href='https://itac.txstate.edu/support/signup'>Signup website</a>."
+  hello: "Hello world"
+  site_name: "Signup Reservation System"
   activerecord:
     attributes:
       session:
+        occurrences: "Session Time"
         site: "Campus"
+        reg_start: "Registration start time"
+        reg_end: "Registration end time"
+      document:
+        item_file_size: "Document size"
+      user:
+        login: "Username"
+  file_icon:
+    type: "%{type} file"
+  departments:
+    index:
+      title: "Departments Offering Training"
+    edit:
+      title: "Update Department Details"
+    update:
+      title: "Update Department Details"
+    new:
+      title: "Create New Department"
+    create:
+      title: "Create New Department"
+    manage:
+      title: "Manage Departments"
+    show:
+      atom_title_prefix: "Upcoming Sessions for "
   topics:
     title: "Training and Workshops"
     index:
       title: "Training and Workshops"
       by_site: "group by location"
+    edit:
+      title: "Update Topic Details"
+    update:
+      title: "Update Topic Details"
+    new:
+      title: "Create New Topic"
+    create:
+      title: "Create New Topic"
+    manage:
+      title: "Manage Topics"
+    show:
+      atom_title_prefix: "Upcoming Sessions for "
+  reservations:
+    edit:
+      title: "Update Reservation Details"
+    update:
+      title: "Update Reservation Details"
   sessions:
     edit:
       site_label: 'Campus:'
+  users:
+    index:
+      title: "Manage Users"
+    new:
+        title: "Create New User"
+    create:
+        title: "Create New User"
+    edit:
+        title: "Update User Details"
+    update:
+        title: "Update User Details"
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Make Changes"
+  tags:
+    show:
+      atom_title_prefix: "Upcoming Sessions for "
+  static:
+    error_404:
+      title: "The page you were looking for doesn't exist (404)"
+      header: "The page you were looking for doesn't exist."
+      message: "You may have mistyped the address or the page may have moved."
+    error_413:
+      title: "The change you wanted was rejected (413)"
+      header: "The change you wanted was rejected."
+      message: "You attempted to upload a file that was too large."
+    error_422:
+      title: "The change you wanted was rejected (422)"
+      header: "The change you wanted was rejected."
+      message: "Maybe you tried to change something you didn't have access to."
+    error_500:
+      title: "We're sorry, but something went wrong (500)"
+      header: "We're sorry, but something went wrong."
+      message: "We've been notified about this issue and we'll take a look at it shortly."
+

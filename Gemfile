@@ -1,6 +1,25 @@
 source 'https://rubygems.org'
-
+#ruby '2.1.5'
 ruby '2.2.4'
+# rical library for generating ics files
+gem 'ri_cal', :github => 'txstate-etc/ri_cal', :ref => '5891733ef1'
+
+group :development, :test do
+  gem 'omniauth-cas', github: 'txstate-etc/omniauth-cas', ref: 'c2c538c371'
+  gem 'thin'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'quiet_assets'
+  
+  # Shows stacktraces with amount of time spent in each function
+  # add ?pp=flamegraph to display
+  gem 'stackprof', '~> 0.2.7'
+  gem 'flamegraph', '~> 0.0.5'
+end
+
+#ruby '2.2.4'
 
 gem 'hashie', '3.4.3'
 
@@ -65,7 +84,7 @@ end
 #   gem 'passenger', require: false
 # end
 
-gem 'signup', github: 'txstate-etc/signup'
+#gem 'signup', github: 'txstate-etc/signup'
 
 # generate static pages
 gem 'high_voltage', '~> 2.2.1'

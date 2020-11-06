@@ -1,0 +1,9 @@
+<% cache("#{sess_key}/departments/index") do %> 
+  <ul id="department-list">
+    <% Department.active.by_name.each do |department| %>
+      <li>
+        <%= link_to department.name, department %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

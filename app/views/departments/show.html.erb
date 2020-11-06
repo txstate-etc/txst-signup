@@ -1,0 +1,56 @@
+<% content_for :head do %>
+  <% if @department.inactive? %>
+    <meta name="robots" content="noindex">
+  <% end %>
+<% end %>
+
+<% cache(["#{sess_key}/#{date_slug}/#{sites_key}/departments/show/upcoming", @department], expires_in: 1.day)  do %>
+  <% if @department.topics.present? %>
+    <div class="content-section">
+      <h2>Upcoming sessions
+        <%= link_to( 
+          "Subscribe to the XML feed for this department",
+           department_path(@department, :format => :atom),
+           :class => 'feed-link') %>
+      </h2>
+      <% topics = @department.upcoming %>
+      <% if topics.present? %>
+        <ul class="topic-list">
+          <% topics.sort_by(&:next_time).each do |topic| %>
+            <% cache(["#{date_slug}/#{sites_key}/departments/show/upcoming", topic], expires_in: 1.day) do %>
+              <li>
+                <%= link_to topic.name, topic %>
+                <% if topic.upcoming_sessions.present? %>       
+                  <% session = topic.upcoming_sessions.first %>
+                  <div class="session-info">
+                    <span class="session-link"><%= link_to_session session %></span>
+                    <%= session_site(session) %>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% else %>
+        <div>This department does not currently have any upcoming sessions.</div>
+      <% end %>
+    </div>
+
+    <% cache(["departments/show/all", @department]) do %>
+      <div class="content-section">
+        <h2>All topics offered by this department</h2>
+        <ul class="topic-list">
+          <% @department.topics.sort.each do |topic| %>
+            <% cache(["departments/show/all", topic]) do %>
+              <li>
+                <%= link_to topic.name, topic %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="empty-list">This department does not currently have any topics available.</div>
+  <% end %>
+<% end %>

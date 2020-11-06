@@ -1,0 +1,27 @@
+<% cache("#{sess_key}/#{date_slug}/#{sites_key}/topics/by-date", expires_in: 1.day)  do %>
+  <% @topics = Topic.upcoming.includes(:sessions) %>
+  <% if @topics.blank? %>
+    <div class="empty-list">
+      <p>Sorry, there are no upcoming sessions at this time. Please check again later!</p>
+    </div>
+  <% else %>
+    <% grouped_by_date(@topics) do |date, sessions| %>
+      <div class="content-section">
+        <h2><%= date.strftime('%A, %B %e, %Y') %></h2>
+        <ul class="topic-list">
+          <% sessions.each do |session| %>
+            <% cache(["#{sites_key}/topics/by-date", session.topic, session]) do %>
+              <li>
+                <%= link_to session.topic.name, session.topic %>
+                <div class="session-info">
+                  <span class="session-link"><%= link_to_session session, :print_date => false %></span>
+                  <%= session_site(session) %>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Texas State Signup
 ==================
 
@@ -5,6 +6,48 @@ This is [Texas State University's](http://txstate.edu) instance of the
 [Signup Reservation System](https://github.com/txstate-etc/signup).
 
 See it live at http://signup.txstate.edu.
+=======
+Signup
+=========
+
+The Signup tool allows users to signup for a workshop, presentation, meeting, or any other event requiring a reservation. Users will be sent automatic reminders about the event and allowed to cancel their reservation if needed.
+
+Events in Signup can also contain a maximum participant limit. If the limit is reached users are automatically added to a waiting list. If an already confirmed user cancels the reservation, the people on the waiting list are confirmed as participants and sent a notification.
+
+This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
+provided by the [RailsApps Project](http://railsapps.github.io/).
+
+Ruby on Rails
+-------------
+
+This application requires:
+
+-   Ruby
+-   Rails
+
+Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+
+Database
+--------
+
+This application uses MySQL with ActiveRecord.
+
+Development
+-----------
+
+-   Template Engine: ERB
+-   Testing Framework: Test::Unit
+-   Form Builder: SimpleForm
+-   Authentication: Omniauth ([CAS](http://jasig.github.io/cas/4.0.x/index.html) support built-in. Other services can be added as needed.)
+
+Email
+-----
+
+The application is configured to send email using a SMTP account.
+
+Email delivery is disabled in development.
+
+>>>>>>> signup/master
 
 Contributing
 ------------
@@ -29,9 +72,12 @@ License
 -------
 
 Signup is released under the Apache License Version 2.0. See the LICENSE.txt file for details.
+<<<<<<< HEAD
 
 Development
 -------
 * For dev, using fakesmtp , but do need to uncomment followinng line in config/application.rb  for smtp_settings
 
     enable_starttls_auto: false,
+=======
+>>>>>>> signup/master

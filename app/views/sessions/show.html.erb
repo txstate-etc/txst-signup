@@ -1,0 +1,10 @@
+<% content_for :head do %>
+  <% if @session.cancelled? || @session.in_past? %>
+    <meta name="robots" content="noindex">
+  <% end %>
+<% end %>
+
+<%= render partial: "details", locals: {session: @session} %>
+
+<%= render partial: "topics/details", 
+            locals: {topic: @session.topic, show_name: true} %>

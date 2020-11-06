@@ -1,56 +1,66 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  resources :survey_responses, only: [:new, :create]
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :departments do
+    get 'manage', on: :collection
+  end
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  # Need reservation/download as alias to show.ics for backwards compatability
+  get '/reservations/download/:id', to: 'reservations#show', defaults: { format: 'ics' }
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # This not included below. because the index route shouldn't be nested
+  resources :reservations, only: :index
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get '/sessions/download', to: 'sessions#download', as: :sessions_download
+  get '/sessions/:id/reservations', to: 'sessions#reservations', as: :sessions_reservations
+  get '/sessions/attendance/:id', to: redirect('/sessions/%{id}/reservations')
+  post '/sessions/:id/email', to: 'sessions#email', as: :sessions_email
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  resources :tags, :only => :show
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  get '/topics/grid(/:year(/:month))', to: 'topics#grid', as: :grid
+  get '/topics/upcoming', to: redirect('/'), as: :upcoming
+  get '/topics/download/:id', to: 'topics#download', as: :download
+  resources :topics, shallow: true do
+    resources :sessions, except: :index do
+      resources :reservations, except: [:index, :new] do
+        member do
+          get 'certificate'
+          get 'send_reminder'
+        end
+      end
+      member do
+        get 'survey_results'
+        get 'survey_comments/:which', to: 'sessions#survey_comments', which: /(most_useful|general)/
+      end
+    end
+    member do
+      get 'history'
+      get 'survey_results'
+      get 'survey_comments/:which', to: 'topics#survey_comments', which: /(most_useful|general)/
+      get 'delete'
+    end
+    collection do
+      get 'manage'
+      get 'by-department'
+      get 'by-site'
+      get 'alpha'
+    end
+  end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  resources :users do
+    collection do
+      get 'autocomplete_search'
+    end
+  end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  get '/auth/:provider/callback', to: 'auth_sessions#create'
+  get '/logout', to: 'auth_sessions#destroy', as: 'logout'
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  root :to => 'topics#index'
+
+  unless Rails.env.production?
+    get '/test', to: 'test#index'
+  end
+
 end
