@@ -14,7 +14,7 @@
 
 require 'htmlentities'
 
-module HtmlToPlainText
+class HtmlToPlainText
 
   # Returns the text in UTF-8 format with all HTML tags removed
   #
