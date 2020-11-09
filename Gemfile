@@ -88,3 +88,38 @@ end
 
 # generate static pages
 gem 'high_voltage', '~> 2.2.1'
+
+# used by HtmlToPlainText
+gem 'htmlentities', '~> 4.3.2'
+
+gem 'simple_form', '3.2.1'
+
+# add cache of association counts
+# more flexibly than the builtin version
+gem 'counter_culture', '~> 0.1.25'
+
+# convert urls in descriptions into links
+# Won't need this after implementing wysiwyg editor.
+gem 'rails_autolink', '~> 1.1.6'
+
+#Tags
+gem 'acts-as-taggable-on', '3.4.4'
+
+# Attachments/Documents
+gem 'paperclip', '~> 4.3.5'
+
+# Nested form helpers (for attachments, instructors, etc)
+gem 'cocoon', '~> 1.2.6'
+
+# LDAP user lookups
+gem 'net-ldap', '~> 0.9.0'
+
+# Autocomplete for instructors, etc.
+# despite the name, works fine on rails 4
+gem 'rails-jquery-autocomplete', '~> 1.0.3'
+
+# render pdf documents from ruby code
+gem 'prawn', '~> 1.3.0'
+
+# audit model changes
+ gem 'paper_trail', '~> 4.1.0'
