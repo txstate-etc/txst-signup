@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 Texas State Signup
 ==================
 
 This is [Texas State University's](http://txstate.edu) instance of the 
-[Signup Reservation System](https://github.com/txstate-etc/signup).
+[Signup Reservation System](https://github.com/txstate-etc/txst-signup).
 
 See it live at http://signup.txstate.edu.
 =======
@@ -47,7 +47,6 @@ The application is configured to send email using a SMTP account.
 
 Email delivery is disabled in development.
 
->>>>>>> signup/master
 
 Contributing
 ------------
@@ -72,12 +71,12 @@ License
 -------
 
 Signup is released under the Apache License Version 2.0. See the LICENSE.txt file for details.
-<<<<<<< HEAD
 
 Development
 -------
 * For dev, using fakesmtp , but do need to uncomment followinng line in config/application.rb  for smtp_settings
 
     enable_starttls_auto: false,
-=======
->>>>>>> signup/master
+
+* Till [commit 1937f6014c48](https://github.com/txstate-etc/txst-signup/commit/1937f6014c4808ff7509e3de610357c2d3dbb35a), this txst-signup is depend on [signup gem source code ](https://github.com/txstate-etc/signup/commit/0b87344243abeacdbb011ce1ff1c805ea18eadf5) (as signup engine) which was also developed by Texas State University as an open source contribution).
+
