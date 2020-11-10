@@ -99,7 +99,7 @@ gem 'rails_autolink', '~> 1.1.6'
 gem 'acts-as-taggable-on', '3.4.4'
 
 # Attachments/Documents
-gem 'paperclip', '~> 4.3.5'
+gem 'paperclip', '~> 6.1.0'
 
 # Nested form helpers (for attachments, instructors, etc)
 gem 'cocoon', '~> 1.2.6'
