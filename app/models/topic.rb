@@ -1,3 +1,5 @@
+require 'csv'
+
 class Topic < ActiveRecord::Base
   belongs_to :department, touch: true
   has_many :sessions, -> { where(cancelled: false).includes([:topic, :occurrences, :site]).order('occurrences.time') }, :dependent => :destroy
