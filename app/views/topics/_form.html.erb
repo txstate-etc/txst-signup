@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :name, label: 'Topic Name:' %>
     <%= f.input :description, label: 'Description of Topic:' %>
-    <%= f.input :tag_list, label: 'Tags:' %>
+    <%= f.input :tag_list, input_html: {value: @topic.tag_list.to_s}, label:'Tags:' %>
     <%= department_select(f) %>
     <%= f.input :minutes, label: 'Class time in Minutes:' %>
     <%= f.input :url, label: 'URL with More Information on Class:' %>
