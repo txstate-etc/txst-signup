@@ -136,6 +136,7 @@ class SessionsController < ApplicationController
         :topic_id, 
         :cancelled, 
         :location, 
+        :specific_location,
         :location_url, 
         :site_id, 
         :seats,

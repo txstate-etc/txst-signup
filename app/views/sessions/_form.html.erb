@@ -61,7 +61,8 @@
   <%= f.input :seats, label: 'Seats Available (blank for no limit):' %>
 
   <div class="location-block">
-    <%= f.input :location, label: 'Location:' %>
+    <%= f.input :location, label: 'General Location:' %>
+    <%= f.input :specific_location, label: 'Specific Location:' %>
     <%= f.association :site, label: t(:'sessions.edit.site_label'), prompt: false %>
     <%= f.input :location_url, label: 'Location Url (optional):' %>
   </div>

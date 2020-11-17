@@ -8,7 +8,8 @@ div#registration-period-field label {
 }
 
 div.location-block {
-  height: 80px;
+  display:grid;
+  grid-template-columns: auto auto;
 }
 
 div.session_location, div.session_site, div.session_location_url {
