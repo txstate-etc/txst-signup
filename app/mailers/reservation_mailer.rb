@@ -2,7 +2,7 @@
 require 'html_to_plain_text'
 
 class ReservationMailer < ActionMailer::Base
-
+  include HtmlToPlainText
   helper :application, :topics
 
   def self.absolute_url(path)
