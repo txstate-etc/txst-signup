@@ -1,5 +1,5 @@
 ORG_URL = 'http://www.txstate.edu/'
-DIRECTORY_URL_BASE = 'http://peoplesearch.txstate.edu/peoplesearch.pl?srchmode=search&query=userid%3D##LOGIN##'
+DIRECTORY_URL_BASE = 'http://www.txstate.edu/search/#type=people&q=userid%3D##LOGIN##'
 
 BASE_DN = "DC=matrix,DC=txstate,DC=edu"
 BIND_DN = "CN=sa-ldap-its,OU=Service Accounts,OU=TxState Objects,#{BASE_DN}"
