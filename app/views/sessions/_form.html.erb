@@ -61,8 +61,8 @@
   <%= f.input :seats, label: 'Seats Available (blank for no limit):' %>
 
   <div class="location-block">
-    <%= f.input :location, input_html:{"data-tooltip" => true, :class => "has-tip", :title => "General name of the location, not specific location."}, label: 'General Location:' %>
-    <%= f.input :specific_location, input_html: { "data-tooltip" => true, :class => "has-tip", :title => "The exact location to attend" }, label: 'Specific Location:' %>
+    <%= f.input :location, input_html:{ :title => "General name of the location, not specific location."}, label: 'General Location:' %>
+    <%= f.input :specific_location, input_html:{ :title => "The exact location to attend"}, label: 'Specific Location:' %>
     <%= f.association :site, label: t(:'sessions.edit.site_label'), prompt: false %>
     <%= f.input :location_url, label: 'Location Url (optional):' %>
   </div>

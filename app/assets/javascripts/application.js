@@ -20,6 +20,7 @@
 //= require jquery-ui/ui/jquery.ui.dialog.js
 //= require jquery-ui/ui/jquery.ui.autocomplete.js
 //= require jquery-ui/ui/jquery.ui.datepicker.js
+//= require jquery-ui/ui/jquery.ui.tooltip.js
 //= require jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js
 //= require autocomplete-rails
 //= require cocoon

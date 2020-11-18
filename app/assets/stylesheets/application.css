@@ -17,6 +17,7 @@
  *= require jquery-ui/themes/base/jquery.ui.dialog.css
  *= require jquery-ui/themes/base/jquery.ui.datepicker.css
  *= require jquery-ui/themes/base/jquery.ui.autocomplete.css
+ *= require jquery-ui/themes/base/jquery.ui.tooltip.css
  *= require signup-theme/jquery-ui-1.10.4.custom.css
  *= require common
  *= require layout

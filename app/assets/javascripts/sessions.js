@@ -113,3 +113,7 @@ $(function() {
     });
   });
 });
+
+$(function() {
+  $(document).tooltip();
+});

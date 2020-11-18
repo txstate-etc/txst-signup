@@ -9,10 +9,10 @@ div#registration-period-field label {
 
 div.location-block {
   display:grid;
-  grid-template-columns: auto auto;
+  grid-template-columns:1fr 4fr;
 }
 
-div.session_location, div.session_site, div.session_location_url {
+div.session_location, div.session_specific_location, div.session_site, div.session_location_url {
   float: left;
   padding-right: 1em;
   input.string {
