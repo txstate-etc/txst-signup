@@ -74,14 +74,16 @@ Signup is released under the Apache License Version 2.0. See the LICENSE.txt fil
 
 Development
 -------
-* For dev, using fakesmtp , but do need to uncomment followinng line in config/application.rb  for smtp_settings
+* For dev, using fakesmtp , but do need to set following line in config/application.rb for smtp_settings through env_file
 
     enable_starttls_auto: false,
+
+( By default, enable_starttls_auto:true.)
 
 Project code base changes
 --------
 * Till [commit 1937f6014c48](https://github.com/txstate-etc/txst-signup/commit/1937f6014c4808ff7509e3de610357c2d3dbb35a), this txst-signup is depend on [signup gem source code ](https://github.com/txstate-etc/signup/commit/0b87344243abeacdbb011ce1ff1c805ea18eadf5) (as signup engine) which was also developed by Texas State University as an open source contribution).
 
-* Start from [commit c623fd008a113](https://github.com/txstate-etc/txst-signup/commit/c623fd008a1138fd521e3181877d82ae5272168a), we combined signup from [commit 0b87344243 ](https://github.com/txstate-etc/signup/commit/0b87344243abeacdbb011ce1ff1c805ea18eadf5) with txst-sign into one place, therefore, original signup engine might no longer in need or most likely no longer get maintained after [commit 0b87344243 ](https://github.com/txstate-etc/signup/commit/0b87344243abeacdbb011ce1ff1c805ea18eadf5).
+* Start from [commit 75d8048af8ed66](https://github.com/txstate-etc/txst-signup/commit/75d8048af8ed66e35dc770b37cb398e3c2a8d7f8), we combined signup from [commit 0b87344243 ](https://github.com/txstate-etc/signup/commit/0b87344243abeacdbb011ce1ff1c805ea18eadf5) with txst-sign into one place, therefore, original signup engine might no longer in need or most likely no longer get maintained after [commit 0b87344243 ](https://github.com/txstate-etc/signup/commit/0b87344243abeacdbb011ce1ff1c805ea18eadf5).
 
 * The work of consolidating txst-signup with signup is done in [consolidate-signup branch](https://github.com/txstate-etc/txst-signup/tree/consolidate-signup)
