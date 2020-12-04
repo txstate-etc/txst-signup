@@ -62,7 +62,7 @@
 
   <div class="location-block">
     <%= f.input :location, input_html:{ :title => "General location information like the building name or Zoom Meeting. This information will be displayed onscreen in the session information prior to registration."}, label: 'General Location:' %>
-    <%= f.input :specific_location, input_html:{ :title => "Specific location information like room # or a hyperlink. This information will only be shared with the user after registration."}, label: 'Location Displayed After Registration:' %>
+    <%= f.input :specific_location, input_html:{ :title => "Specific location information like room # or a hyperlink. This information will only be shared with the user after registration."}, label: 'Location Shared After Registration:' %>
     <%= f.association :site, label: t(:'sessions.edit.site_label'), prompt: false %>
     <%= f.input :location_url, label: 'Location Url (optional):' %>
   </div>
