@@ -91,6 +91,8 @@ $(function() {
     addDatePicker(input, true);
   });
 
+  $('input.datetimepicker').attr('autocomplete', 'off');
+
   $('#instructors, #permissions').on('railsAutocomplete.select', 'input.autocomplete', function(event, data) {
     if (data.item.id == 'add-new') {
       // display modal
