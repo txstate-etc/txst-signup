@@ -18,7 +18,7 @@ class Session < ActiveRecord::Base
   validates :instructors, presence: true, unless: :invalid_instructor
   validates :seats, numericality: { only_integer: true, allow_nil: true }
   validate :enough_seats
-  validates :location, :specific_location, :site, presence: true
+  validates :location, :site, presence: true
   after_validation :reload_if_invalid
 
   around_update :send_update_notifications
