@@ -141,6 +141,11 @@ class Session < ActiveRecord::Base
     location_url.present? ? "#{s}. #{location_url}" : s
   end
 
+  def locs_with_site_and_url
+    s = site.present? ? "#{location}\n#{specific_location}\n(#{site.name})" : location
+    location_url.present? ? "#{s}\n#{location_url}" : s
+  end
+
   def time
     occurrences.first.time if occurrences.present?
   end
@@ -266,7 +271,7 @@ class Session < ActiveRecord::Base
         event.dtstart = o.time
         event.dtend = o.time + topic.minutes * 60
         event.url = topic.url
-        event.location = loc_with_site_and_url
+        event.location = locs_with_site_and_url
         event
       end
     end
