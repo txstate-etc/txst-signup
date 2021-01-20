@@ -143,9 +143,9 @@ class Session < ActiveRecord::Base
   end
 
   def locs_with_site_and_url
-    loc = specific_location.present? ? "#{location}\n#{specific_location}": location
-    s = site.present? ? "#{loc}\n(#{site.name})" : loc
-    location_url.present? ? "#{s}\n#{location_url}" : s
+    loc = specific_location.present? ? "#{location}  \n#{specific_location}": location
+    s = site.present? ? "#{loc}  \n(#{site.name})" : loc
+    location_url.present? ? "#{s}  \n#{location_url}" : s
   end
 
   def time
