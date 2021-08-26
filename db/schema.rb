@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160226041758) do
 
   create_table "auth_sessions", force: :cascade do |t|
-    t.string   "credentials", limit: 255, null: false
+    t.string   "credentials", limit: 1024, null: false
     t.integer  "user_id",     limit: 4,   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
