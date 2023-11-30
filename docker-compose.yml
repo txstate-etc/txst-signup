@@ -29,6 +29,6 @@ services:
   fakesmtp:
     image: maildev/maildev
     ports:
-      - 1080:80
+      - 1080:1080
 volumes:
   signupdata: {}
