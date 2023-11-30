@@ -116,3 +116,5 @@ gem 'prawn', '~> 1.3.0'
 
 # audit model changes
  gem 'paper_trail', '~> 4.1.0'
+
+ gem 'mimemagic', '0.3.0', github: 'mimemagicrb/mimemagic', ref: 'a4b038c6c1b9d76dac33d5711d28aaa9b4c42c66'

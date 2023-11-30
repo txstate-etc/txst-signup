@@ -33,9 +33,13 @@ WORKDIR /usr/app
 
 # two step copy is for faster rebuilds. bundle is only run when Gemfile changes
 COPY Gemfile ./
+COPY Gemfile.lock ./
+
+RUN git config --global url."https://".insteadOf git://
 
 RUN bundle config git.allow_insecure true &&\
     bundle install --without test development &&\
+		bundle update mimemagic &&\
     passenger-install-apache2-module -a &&\
     mv /usr/local/rvm/gems/ruby-2.2.4/gems/passenger-6.0.4 /usr/local/lib/
 
