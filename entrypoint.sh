@@ -5,6 +5,7 @@ export WEB_HOSTNAME=${WEB_HOSTNAME:-`hostname`}
 export SERVER_ADMIN=${SERVER_ADMIN:-}
 export SUPPORT_EMAIL=${SUPPORT_EMAIL:-}
 export ENABLE_STARTTLS_AUTO=${ENABLE_STARTTLS_AUTO:-true}
+export SMTP_PORT=${SMTP_PORT:-25}
 
 export DB_DATABASE=${DB_DATABASE:-signup}
 export DB_USER=${DB_USER:-root}

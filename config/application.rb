@@ -10,7 +10,7 @@ module TxstSignup
   class Application < Rails::Application
     config.action_mailer.smtp_settings = {
       enable_starttls_auto: "{{ENABLE_STARTTLS_AUTO}}".downcase=="true",
-      port: 1025,
+      port: Rails.application.secrets.smtp_port,
       address: Rails.application.secrets.smtp_host,
       domain: Rails.application.secrets.domain_name
     }
