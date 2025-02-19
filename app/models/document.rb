@@ -4,7 +4,7 @@ class Document < ActiveRecord::Base
   has_paper_trail
 
   validates_attachment :item, :presence => true,
-    :size => { :less_than => 11.megabytes, :message => "must be no more than 10MB" }
+    :size => { :less_than => 201.megabytes, :message => "must be no more than 200MB" }
   do_not_validate_attachment_file_type :item
 
   def friendly_name
